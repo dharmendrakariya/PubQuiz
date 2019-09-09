@@ -10,13 +10,9 @@ export default class Question extends Component {
     this.answer = null
   }
 
-  handleFormChange(event) {
-    this.answer = event.target.value
-  }
-
-  handleSubmit(event) {
-    event.preventDefault()
-
+  handleFormChange = (e) => this.answer = e.target.value
+  handleSubmit = (e) => {
+    e.preventDefault()
     this.handleAnswer(this.answer)
   }
 
