@@ -26,8 +26,8 @@ export default class Question extends Component {
         <form onSubmit={this.handleSubmit} data-testid="form">
           { choices.map((choice, index) =>
             <div key={index}>
-              <label htmlFor={index}>{choice}</label>
-              <input id={index} name={index} type="radio" value={choice} onChange={this.handleFormChange} />
+              <input id={choice} name="answer" type="radio" value={choice} onChange={this.handleFormChange} />
+              <label htmlFor={choice}>{choice}</label>
             </div>
           ) }
           <button type="submit">Submit Answer</button>
