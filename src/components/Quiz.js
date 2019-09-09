@@ -16,7 +16,13 @@ export default class Quiz extends Component {
   }
 
   handleAnswer(answer) {
-    this.setState({ question: { answer }, showQuestion: false })
+    const question = this.state.question
+    question.answer = answer
+
+    this.setState({
+      question,
+      showQuestion: false
+    })
   }
 
   render() {
