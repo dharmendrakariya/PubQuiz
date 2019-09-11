@@ -1,9 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
+import Quiz from './components/Quiz';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+jest.mock('./components/Quiz')
+
+describe(App, () => {
+  it('renders the app', () => {
+    const { queryByText } = render(<App />)
+    expect(queryByText('PubQuiz App')).not.toBeNull()
+  })
+
+  it('renders the Quiz', () => {
+    const { queryByText } = render(<App />)
+    expect(queryByText('MockedQuiz')).not.toBeNull()
+  })
+})
