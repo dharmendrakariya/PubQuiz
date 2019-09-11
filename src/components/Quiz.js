@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
 import Question from './Question'
+import Results from './Results'
 
 export default class Quiz extends Component {
   constructor(props) {
     super(props)
 
-    this.handleAnswer = this.handleAnswer.bind(this)
     this.state = {
       question: {
         text: 'What is the answer to life, the universe and everything?',
-        choices: ['40', '41', '42', '43']
+        choices: ['40', '41', '42', '43'],
+        answer: '42'
       },
       showQuestion: true
     }
+
+    this.handleAnswer = this.handleAnswer.bind(this)
   }
 
   handleAnswer(answer) {
     const question = this.state.question
-    question.answer = answer
+    question.userAnswer = answer
 
     this.setState({
       question,
@@ -33,7 +36,7 @@ export default class Quiz extends Component {
     }
 
     return (
-      <div>Results</div>
+      <Results question={this.state.question} />
     )
   }
 }
