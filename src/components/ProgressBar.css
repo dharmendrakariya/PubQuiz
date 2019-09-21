@@ -8,8 +8,19 @@
   height: 2em;
   width: 100%;
 
-  background-color: blue;
   color: black;
-  transition: width 1s;
+  transition: width 1s, background-color 1s ease;
   transition-timing-function: linear;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
 }

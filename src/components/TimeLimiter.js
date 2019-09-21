@@ -1,5 +1,4 @@
 import React from 'react'
-import './TimeLimiter.css'
 import ProgressBar from './ProgressBar'
 
 export default class TimeLimiter extends React.Component {
