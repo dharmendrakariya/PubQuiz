@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Question from './Question'
 import Results from './Results'
 import TimeLimiter from './TimeLimiter'
 
-export default class Quiz extends Component {
+export default class Quiz extends React.Component {
   constructor(props) {
     super(props)
 
@@ -17,6 +17,7 @@ export default class Quiz extends Component {
     }
 
     this.handleAnswer = this.handleAnswer.bind(this)
+    this.timerCallback = this.timerCallback.bind(this)
   }
 
   handleAnswer(answer) {
@@ -29,11 +30,15 @@ export default class Quiz extends Component {
     })
   }
 
+  timerCallback() {
+    this.handleAnswer(null)
+  }
+
   render() {
     if (this.state.showQuestion) {
       return (
         <div>
-          <TimeLimiter totalTimeInSeconds={10} callbackFunction={() => console.log('callback') }/>
+          <TimeLimiter totalTimeInSeconds={10} callbackFunction={this.timerCallback}/>
           <Question question={this.state.question} handleAnswer={this.handleAnswer} />
         </div>
       )
