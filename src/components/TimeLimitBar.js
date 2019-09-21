@@ -23,7 +23,7 @@ export default class TimeLimitBar extends React.Component {
     const timeLeft = this.state.timeLeft - 1
     this.widthPercentage = timeLeft / this.state.timeTotal * 100;
 
-    if(timeLeft <= 0) {
+    if(timeLeft < 0) {
       this.stop()
     }
     this.setState({timeLeft})
@@ -37,9 +37,7 @@ export default class TimeLimitBar extends React.Component {
   render() {
     return (
       <div className="progress">
-        <div className="progress-bar" ref={this.barRef} style={{width: this.widthPercentage + '%'}}>
-          {this.state.timeLeft}
-        </div>
+        <div className="progress-bar" ref={this.barRef} style={{width: this.widthPercentage + '%'}} />
       </div>
     )
   }
