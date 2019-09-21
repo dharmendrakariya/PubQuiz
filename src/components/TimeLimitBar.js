@@ -1,17 +1,13 @@
 import React from 'react';
+import './TimerLimitBar.css';
 
 export default class TimeLimitBar extends React.Component {
   constructor(props) {
     super(props)
 
-    this.style = {
-      backgroundColor: 'blue',
-      width: '100%',
-      height: '2em'
-    }
-    this.state = { counter: 0 }
-
+    this.state = { timeLeft: 10, timeTotal: 10 }
     this.timer = this.timer.bind(this)
+    this.stop = this.stop.bind(this)
   }
 
   componentDidMount() {
@@ -24,12 +20,27 @@ export default class TimeLimitBar extends React.Component {
   }
 
   timer() {
-    this.setState({counter: this.state.counter + 1 })
+    const timeLeft = this.state.timeLeft - 1
+    this.widthPercentage = timeLeft / this.state.timeTotal * 100;
+
+    if(timeLeft <= 0) {
+      this.stop()
+    }
+    this.setState({timeLeft})
+  }
+
+  stop() {
+    console.log("Stop")
+    clearInterval(this.state.intervalId);
   }
 
   render() {
     return (
-      <div style={this.style}>{this.state.counter}</div>
+      <div className="progress">
+        <div className="progress-bar" ref={this.barRef} style={{width: this.widthPercentage + '%'}}>
+          {this.state.timeLeft}
+        </div>
+      </div>
     )
   }
 }
