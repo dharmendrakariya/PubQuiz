@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Question from './Question'
 import Results from './Results'
-import TimeLimitBar from './TimeLimitBar'
+import TimeLimiter from './TimeLimiter'
 
 export default class Quiz extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class Quiz extends Component {
     if (this.state.showQuestion) {
       return (
         <div>
-          <TimeLimitBar />
+          <TimeLimiter totalTimeInSeconds={10} callbackFunction={() => console.log('callback') }/>
           <Question question={this.state.question} handleAnswer={this.handleAnswer} />
         </div>
       )
