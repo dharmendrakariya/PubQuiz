@@ -6,13 +6,13 @@ export default class TimeLimitBar extends React.Component {
     super(props)
 
     this.state = { timeLeft: 10, timeTotal: 10 }
+
     this.timer = this.timer.bind(this)
     this.stop = this.stop.bind(this)
   }
 
   componentDidMount() {
-    var intervalId = setInterval(this.timer, 1000);
-    this.setState({intervalId: intervalId});
+    this.setState({intervalId: setInterval(this.timer, 1000)});
   }
 
   componentWillUnmount() {
@@ -26,18 +26,18 @@ export default class TimeLimitBar extends React.Component {
     if(timeLeft < 0) {
       this.stop()
     }
+
     this.setState({timeLeft})
   }
 
   stop() {
-    console.log("Stop")
     clearInterval(this.state.intervalId);
   }
 
   render() {
     return (
       <div className="progress">
-        <div className="progress-bar" ref={this.barRef} style={{width: this.widthPercentage + '%'}} />
+        <div className="progress-bar" style={{width: this.widthPercentage + '%'}} />
       </div>
     )
   }
