@@ -4,8 +4,15 @@
 # PubQuiz
 
 ## Prerequisites
-- NodeJS 12.10
-- Yarn
+- [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
+
+## Setup
+`asdf` automatically installs the correct nodejs and yarn versions
+
+```bash
+asdf install
+yarn install
+```
 
 ## Available Scripts
 In the project directory, you can run:
