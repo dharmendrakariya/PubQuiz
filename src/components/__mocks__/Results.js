@@ -2,8 +2,9 @@ import React from 'react'
 
 const Results = (props) => (
   <div>
-    <span>MockedResults</span>
-    <span>{props.question.text}</span>
+    <p>MockedResults</p>
+    <p>Question: {props.question.text}</p>
+    <p>UserAnswer: {props.question.userAnswer ? props.question.userAnswer : 'null'}</p>
   </div>
 )
 

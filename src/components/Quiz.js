@@ -11,7 +11,9 @@ export default class Quiz extends React.Component {
       question: {
         text: 'What is the answer to life, the universe and everything?',
         choices: ['40', '41', '42', '43'],
-        answer: '42'
+        answer: '42',
+        userAnswer: null,
+        timeLimitInSeconds: 10
       },
       showQuestion: true
     }
@@ -31,7 +33,9 @@ export default class Quiz extends React.Component {
   }
 
   timerCallback() {
-    this.handleAnswer(null)
+    this.setState({
+      showQuestion: false
+    })
   }
 
   render() {
