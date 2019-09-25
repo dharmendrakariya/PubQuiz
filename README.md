@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/Hacklor/PubQuiz.svg?branch=master)](https://travis-ci.com/Hacklor/PubQuiz)
+[![codecov](https://codecov.io/gh/Hacklor/PubQuiz/branch/master/graph/badge.svg)](https://codecov.io/gh/Hacklor/PubQuiz)
 
 # PubQuiz
 
