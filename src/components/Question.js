@@ -4,16 +4,12 @@ export default class Question extends Component {
   constructor(props) {
     super(props)
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handlePlayerAnswer = this.props.handlePlayerAnswer
     this.handleFormChange = this.handleFormChange.bind(this)
-    this.handleAnswer = this.props.handleAnswer
-    this.answer = null
   }
 
-  handleFormChange = (e) => this.answer = e.target.value
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.handleAnswer(this.answer)
+  handleFormChange(e) {
+    this.handlePlayerAnswer(e.target.value)
   }
 
   render() {
@@ -30,7 +26,6 @@ export default class Question extends Component {
               <label htmlFor={choice}>{choice}</label>
             </div>
           ) }
-          <button type="submit">Submit Answer</button>
         </form>
       </div>
     )
