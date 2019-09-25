@@ -4,7 +4,7 @@ const Results = (props) => (
   <div>
     <p>MockedResults</p>
     <p>Question: {props.question.text}</p>
-    <p>UserAnswer: {props.question.userAnswer ? props.question.userAnswer : 'null'}</p>
+    <p>UserAnswer: {props.question.playerAnswer ? props.question.playerAnswer : 'null'}</p>
   </div>
 )
 

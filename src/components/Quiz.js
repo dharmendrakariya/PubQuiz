@@ -12,23 +12,22 @@ export default class Quiz extends React.Component {
         text: 'What is the answer to life, the universe and everything?',
         choices: ['40', '41', '42', '43'],
         answer: '42',
-        userAnswer: null,
+        playerAnswer: null,
         timeLimitInSeconds: 10
       },
       showQuestion: true
     }
 
-    this.handleAnswer = this.handleAnswer.bind(this)
     this.timerCallback = this.timerCallback.bind(this)
+    this.handlePlayerAnswer = this.handlePlayerAnswer.bind(this)
   }
 
-  handleAnswer(answer) {
+  handlePlayerAnswer(playerAnswer) {
     const question = this.state.question
-    question.userAnswer = answer
+    question.playerAnswer = playerAnswer
 
     this.setState({
-      question,
-      showQuestion: false
+      question
     })
   }
 
@@ -42,8 +41,8 @@ export default class Quiz extends React.Component {
     if (this.state.showQuestion) {
       return (
         <div>
-          <TimeLimiter totalTimeInSeconds={10} callbackFunction={this.timerCallback}/>
-          <Question question={this.state.question} handleAnswer={this.handleAnswer} />
+          <TimeLimiter totalTimeInSeconds={this.state.question.timeLimitInSeconds} callbackFunction={this.timerCallback}/>
+          <Question question={this.state.question} handlePlayerAnswer={this.handlePlayerAnswer} />
         </div>
       )
     }
