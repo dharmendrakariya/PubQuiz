@@ -24,22 +24,11 @@ describe(Question, () => {
     expect(queryByLabelText(choices[3])).not.toBeNull()
   })
 
-  it('selects an answer', () => {
-    const { getByLabelText } = render(<Question question={question} />)
-
-    const choices = question.choices
-    fireEvent.click(getByLabelText('42'))
-
-    expect(getByLabelText('42').checked).toBe(true)
-  })
-
-  it("submits the player's answer", () => {
+  it("handles the player's answer", () => {
     const mockedHandleAnswer = jest.fn()
-    const { getByLabelText, getByTestId } = render(<Question question={question} handleAnswer={mockedHandleAnswer}/>)
+    const { getByLabelText, getByTestId } = render(<Question question={question} handlePlayerAnswer={mockedHandleAnswer}/>)
 
-    const choices = question.choices
     fireEvent.click(getByLabelText('42'))
-    fireEvent.submit(getByTestId('form'))
 
     expect(mockedHandleAnswer).toBeCalledWith('42')
   })
