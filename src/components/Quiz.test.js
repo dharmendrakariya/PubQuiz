@@ -37,7 +37,7 @@ describe(Quiz, () => {
     await fireEvent.click(getByLabelText('42'))
     jest.advanceTimersByTime(11000)
     await fireEvent.click(getByLabelText('Octarine'))
-    jest.advanceTimersByTime(11000)
+    jest.advanceTimersByTime(6000)
 
     expect(queryByText('MockedResults')).not.toBeNull()
     expect(queryByText('Question0: ' + question1)).not.toBeNull()
@@ -46,13 +46,16 @@ describe(Quiz, () => {
     expect(queryByText('PlayerAnswer1: Octarine')).not.toBeNull()
   })
 
-  xit('goes to the results screen without answer', async() => {
-    const { queryByText, getByTestId } = render(<Quiz />)
+  it('goes to the results screen without answer', async() => {
+    const { queryByText } = render(<Quiz />)
 
     jest.advanceTimersByTime(11000)
+    jest.advanceTimersByTime(6000)
 
     expect(queryByText('MockedResults')).not.toBeNull()
-    expect(queryByText('Question: ' + question1)).not.toBeNull()
-    expect(queryByText('UserAnswer: null')).not.toBeNull()
+    expect(queryByText('Question0: ' + question1)).not.toBeNull()
+    expect(queryByText('PlayerAnswer0: null')).not.toBeNull()
+    expect(queryByText('Question1: ' + question2)).not.toBeNull()
+    expect(queryByText('PlayerAnswer1: null')).not.toBeNull()
   })
 })
