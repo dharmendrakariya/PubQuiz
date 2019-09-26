@@ -8,6 +8,7 @@ jest.mock('./Results')
 describe(Quiz, () => {
   const question1 = 'What is the answer to life, the universe and everything?'
   const question2 = 'What is the name of the Colour of Magic?'
+  const questions = [question1, question2]
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -18,12 +19,12 @@ describe(Quiz, () => {
   })
 
   it('renders a question', () => {
-    const { queryByText } = render(<Quiz />)
+    const { queryByText } = render(<Quiz questions={questions} />)
     expect(queryByText(question1)).not.toBeNull()
   })
 
   it('goes to the next question', async () => {
-    const { queryByText, getByLabelText } = render(<Quiz />)
+    const { queryByText, getByLabelText } = render(<Quiz questions={questions} />)
 
     await fireEvent.click(getByLabelText('42'))
     jest.advanceTimersByTime(11000)
@@ -32,7 +33,7 @@ describe(Quiz, () => {
   })
 
   it('goes to the results screen, passing the answers', async () => {
-    const { queryByText, getByLabelText } = render(<Quiz />)
+    const { queryByText, getByLabelText } = render(<Quiz questions={questions} />)
 
     await fireEvent.click(getByLabelText('42'))
     jest.advanceTimersByTime(11000)
@@ -47,7 +48,7 @@ describe(Quiz, () => {
   })
 
   it('goes to the results screen without answer', async() => {
-    const { queryByText } = render(<Quiz />)
+    const { queryByText } = render(<Quiz questions={questions} />)
 
     jest.advanceTimersByTime(11000)
     jest.advanceTimersByTime(6000)
