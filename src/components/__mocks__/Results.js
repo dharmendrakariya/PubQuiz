@@ -3,8 +3,14 @@ import React from 'react'
 const Results = (props) => (
   <div>
     <p>MockedResults</p>
-    <p>Question: {props.question.text}</p>
-    <p>UserAnswer: {props.question.playerAnswer ? props.question.playerAnswer : 'null'}</p>
+    { props.questions.map((q, i) => {
+      return (
+        <div key={i}>
+          <p>Question{i}: {q.text}</p>
+          <p>PlayerAnswer{i}: {q.playerAnswer ? q.playerAnswer : 'null'}</p>
+        </div>
+      )
+    }) }
   </div>
 )
 
