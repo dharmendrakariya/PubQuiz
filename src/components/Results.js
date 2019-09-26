@@ -15,7 +15,7 @@ class Results extends Component {
     return (
       <div>
         { this.questions.map((q, i) =>
-          <p key={i}>Question {i}: { this.answeredCorrectly(q) ? 'Correct!' : 'Incorrect' }</p>
+          <p key={q.id}>Question {i}: { this.answeredCorrectly(q) ? 'Correct!' : 'Incorrect' }</p>
         ) }
       </div>
     )

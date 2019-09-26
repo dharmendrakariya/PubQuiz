@@ -20,6 +20,13 @@ export default class App extends React.Component {
       answer: 'Octarine',
       playerAnswer: null,
       timeLimitInSeconds: 5
+    }, {
+      id: 'unique_id_3',
+      text: 'What is the name of the cypher that is used with a deck of playing cards in Cryptonomicon?',
+      choices: ['Finux', 'Pontificum', 'Eruditorum', 'Pontifex'],
+      answer: 'Pontifex',
+      playerAnswer: null,
+      timeLimitInSeconds: 5
     }]
   }
 

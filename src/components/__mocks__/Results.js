@@ -5,7 +5,7 @@ const Results = (props) => (
     <p>MockedResults</p>
     { props.questions.map((q, i) => {
       return (
-        <div key={i}>
+        <div key={q.id}>
           <p>Question{i}: {q.text}</p>
           <p>PlayerAnswer{i}: {q.playerAnswer ? q.playerAnswer : 'null'}</p>
         </div>
