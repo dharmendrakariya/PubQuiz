@@ -8,14 +8,8 @@ export default class Quiz extends React.Component {
     super(props)
 
     this.state = {
-      question: {
-        text: 'What is the answer to life, the universe and everything?',
-        choices: ['40', '41', '42', '43'],
-        answer: '42',
-        playerAnswer: null,
-        timeLimitInSeconds: 10
-      },
-      showQuestion: true
+      questions: this.props.questions,
+      currentQuestionIndex: 0
     }
 
     this.timerCallback = this.timerCallback.bind(this)
@@ -23,32 +17,38 @@ export default class Quiz extends React.Component {
   }
 
   handlePlayerAnswer(playerAnswer) {
-    const question = this.state.question
-    question.playerAnswer = playerAnswer
+    const index = this.state.currentQuestionIndex
+
+    const questions = this.state.questions
+    questions[index].playerAnswer = playerAnswer
 
     this.setState({
-      question
+      questions
     })
   }
 
   timerCallback() {
+    const index = this.state.currentQuestionIndex
+
     this.setState({
-      showQuestion: false
+      currentQuestionIndex: index + 1,
+      showResults: (index + 1 === this.state.questions.length)
     })
   }
 
   render() {
-    if (this.state.showQuestion) {
+    if (this.state.showResults) {
       return (
-        <div>
-          <TimeLimiter totalTimeInSeconds={this.state.question.timeLimitInSeconds} callbackFunction={this.timerCallback}/>
-          <Question question={this.state.question} handlePlayerAnswer={this.handlePlayerAnswer} />
-        </div>
+        <Results questions={this.state.questions} />
       )
     }
 
+    const question = this.state.questions[this.state.currentQuestionIndex]
     return (
-      <Results question={this.state.question} />
+      <div key={question.id}>
+        <TimeLimiter totalTimeInSeconds={question.timeLimitInSeconds} callbackFunction={this.timerCallback}/>
+        <Question question={question} handlePlayerAnswer={this.handlePlayerAnswer} />
+      </div>
     )
   }
 }

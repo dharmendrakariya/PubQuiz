@@ -4,17 +4,20 @@ class Results extends Component {
   constructor(props) {
     super(props)
 
-    this.question = this.props.question
+    this.questions = this.props.questions
   }
 
-  answeredCorrectly() {
-    return this.question.answer === this.question.userAnswer
+  answeredCorrectly(q) {
+    return q.answer === q.playerAnswer
   }
 
   render() {
-    const text = this.answeredCorrectly() ? 'Correct!' : 'Incorrect'
     return (
-      <div>{text}</div>
+      <div>
+        { this.questions.map((q, i) =>
+          <p key={q.id}>Question {i}: { this.answeredCorrectly(q) ? 'Correct!' : 'Incorrect' }</p>
+        ) }
+      </div>
     )
   }
 }
