@@ -7,8 +7,8 @@ class Results extends Component {
     this.questions = this.props.questions
   }
 
-  answeredCorrectly(question) {
-    return question.answer === question.userAnswer
+  answeredCorrectly(q) {
+    return q.answer === q.playerAnswer
   }
 
   render() {

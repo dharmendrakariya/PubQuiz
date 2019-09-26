@@ -20,8 +20,8 @@ describe(Results, () => {
   }]
 
   it('shows that all questions were answered correctly', () => {
-    questions[0].userAnswer = '42'
-    questions[1].userAnswer = 'Octarine'
+    questions[0].playerAnswer = '42'
+    questions[1].playerAnswer = 'Octarine'
 
     const { queryByText } = render(<Results questions={questions} />)
     expect(queryByText('Question 0: Correct!')).not.toBeNull()
@@ -29,8 +29,8 @@ describe(Results, () => {
   })
 
   it('shows that one of the questions was answered correctly', () => {
-    questions[0].userAnswer = '43'
-    questions[1].userAnswer = 'Octarine'
+    questions[0].playerAnswer = '43'
+    questions[1].playerAnswer = 'Octarine'
 
     const { queryByText } = render(<Results questions={questions} />)
     expect(queryByText('Question 0: Incorrect')).not.toBeNull()
@@ -38,8 +38,8 @@ describe(Results, () => {
   })
 
   it('shows that all questions were answered incorrectly', () => {
-    questions[0].userAnswer = '43'
-    questions[1].userAnswer = 'Octarina'
+    questions[0].playerAnswer = '43'
+    questions[1].playerAnswer = 'Octarina'
 
     const { queryByText } = render(<Results questions={questions} />)
     expect(queryByText('Question 0: Incorrect')).not.toBeNull()
