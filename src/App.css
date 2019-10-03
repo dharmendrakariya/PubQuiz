@@ -1,14 +1,24 @@
 .App {
-  text-align: center;
+  background-color: lightgrey;
+  text-align: left;
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 25vh;
+  background-color: #2F0866;
+  color: #A789D0;
+
+  font-size: calc(2em + 2vmin);
+  font-weight: bold;
+  text-align: center;
+
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.App-main {
+  background-color: lightgrey;
 }

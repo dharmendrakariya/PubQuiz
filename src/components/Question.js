@@ -34,7 +34,7 @@ export default class Question extends Component {
     return (
       <div className={styles.question}>
         <div className={styles.text}>{question.text}</div>
-        <form onSubmit={this.handleSubmit} data-testid="form">
+        <form className={styles.choices} onSubmit={this.handleSubmit} data-testid="form">
           { question.choices.map(this.renderChoice) }
         </form>
       </div>
