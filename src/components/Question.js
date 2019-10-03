@@ -1,33 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import styles from './Question.module.css'
 
 export default class Question extends Component {
   constructor(props) {
     super(props)
 
+    this.state = { selectedChoice: null }
+
     this.handlePlayerAnswer = this.props.handlePlayerAnswer
-    this.handleFormChange = this.handleFormChange.bind(this)
+
+    this.handleChoiceChange = this.handleChoiceChange.bind(this)
+    this.renderChoice = this.renderChoice.bind(this)
+    this.choiceClassNames = this.choiceClassNames.bind(this)
   }
 
-  handleFormChange(e) {
+  handleChoiceChange(e) {
+    this.setState({selectedChoice: e.target.value})
+
     this.handlePlayerAnswer(e.target.value)
+  }
+
+  choiceClassNames(choice) {
+    if (this.state.selectedChoice === choice) {
+      return styles.choice + " " + styles.selected
+    }
+
+    return styles.choice
   }
 
   render() {
     const question = this.props.question
-    const choices = question.choices
 
     return (
-      <div>
-        <div>{question.text}</div>
+      <div className={styles.question}>
+        <div className={styles.text}>{question.text}</div>
         <form onSubmit={this.handleSubmit} data-testid="form">
-          { choices.map((choice, index) =>
-            <div key={index}>
-              <input id={choice} name="answer" type="radio" value={choice} onChange={this.handleFormChange} />
-              <label htmlFor={choice}>{choice}</label>
-            </div>
-          ) }
+          { question.choices.map(this.renderChoice) }
         </form>
       </div>
+    )
+  }
+
+  renderChoice(choice) {
+    return (
+      <label className={this.choiceClassNames(choice)} key={choice} htmlFor={choice}>
+        <input id={choice} name="answer" type="radio" value={choice} onChange={this.handleChoiceChange} />
+        {choice}
+      </label>
     )
   }
 }

@@ -15,20 +15,20 @@ describe(Question, () => {
   })
 
   it('shows the choices', () => {
-    const { queryByLabelText } = render(<Question question={question} />)
+    const { queryByDisplayValue } = render(<Question question={question} />)
 
     const choices = question.choices
-    expect(queryByLabelText(choices[0])).not.toBeNull()
-    expect(queryByLabelText(choices[1])).not.toBeNull()
-    expect(queryByLabelText(choices[2])).not.toBeNull()
-    expect(queryByLabelText(choices[3])).not.toBeNull()
+    expect(queryByDisplayValue(choices[0])).not.toBeNull()
+    expect(queryByDisplayValue(choices[1])).not.toBeNull()
+    expect(queryByDisplayValue(choices[2])).not.toBeNull()
+    expect(queryByDisplayValue(choices[3])).not.toBeNull()
   })
 
   it("handles the player's answer", () => {
     const mockedHandleAnswer = jest.fn()
-    const { getByLabelText, getByTestId } = render(<Question question={question} handlePlayerAnswer={mockedHandleAnswer}/>)
+    const { getByDisplayValue, getByTestId } = render(<Question question={question} handlePlayerAnswer={mockedHandleAnswer}/>)
 
-    fireEvent.click(getByLabelText('42'))
+    fireEvent.click(getByDisplayValue('42'))
 
     expect(mockedHandleAnswer).toBeCalledWith('42')
   })
