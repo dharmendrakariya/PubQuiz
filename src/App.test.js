@@ -8,7 +8,7 @@ jest.mock('./components/Quiz')
 describe(App, () => {
   it('renders the app', () => {
     const { queryByText } = render(<App />)
-    expect(queryByText('PubQuiz App')).not.toBeNull()
+    expect(queryByText('PubQuiz')).not.toBeNull()
   })
 
   it('renders the Quiz', () => {

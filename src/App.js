@@ -16,9 +16,11 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          PubQuiz App
+          PubQuiz
         </header>
-        <Quiz questions={this.state.questions}/>
+        <main className="App-main">
+          <Quiz questions={this.state.questions}/>
+        </main>
       </div>
     )
   }

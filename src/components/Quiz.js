@@ -2,6 +2,7 @@ import React from 'react'
 import Question from './Question'
 import Results from './Results'
 import TimeLimiter from './TimeLimiter'
+import styles from './Quiz.module.css'
 
 export default class Quiz extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export default class Quiz extends React.Component {
 
     const question = this.state.questions[this.state.currentQuestionIndex]
     return (
-      <div key={question.id}>
+      <div className={styles.quiz} key={question.id}>
         <TimeLimiter totalTimeInSeconds={question.timeLimitInSeconds} callbackFunction={this.timerCallback}/>
         <Question question={question} handlePlayerAnswer={this.handlePlayerAnswer} />
       </div>

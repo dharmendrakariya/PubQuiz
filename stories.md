@@ -9,10 +9,11 @@ can play against each other.
 - [x] Show 1 multiple choice question, answer, see result
 - [x] Start screen, Add timer, set time limit for question
 - [x] Multiple questions
-
-- [ ] Load Questions from JSON file
-- [ ] Better UI design, redesign results screen, selection of answer
-- [ ] CSS per component
+- [x] Load Questions from JSON file
+- [ ] Better UI design
+  * [ ] selection of answer
+  * [ ] redesign results screen
+  * [ ] CSS per component
 
 ## Epics:
 
