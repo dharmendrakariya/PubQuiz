@@ -3,25 +3,32 @@ import styles from './App.module.scss';
 import Quiz from './components/Quiz';
 import QuizSelection from './components/QuizSelection';
 
-import quiz from './quizzes/nerd-quiz.json';
+import quizIndex from './quizzes/quiz-index.json'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      quizzes: this.loadQuizzes(quizIndex),
       selectedQuiz: null
     }
 
-    this.handleSelectedQuiz = this.handleSelectedQuiz.bind(this)
+    this.handleQuizSelection = this.handleQuizSelection.bind(this)
   }
 
-  handleSelectedQuiz() {
-    this.setState({selectedQuiz: quiz})
+  loadQuizzes(index) {
+    const quizzes = {}
+    index.map((q) => quizzes[q.id] = require('./quizzes/' + q.file) )
+    return quizzes
+  }
+
+  handleQuizSelection(id) {
+    this.setState({selectedQuiz: this.state.quizzes[id]})
   }
 
   render() {
-    this.component = <QuizSelection callbackSelected={this.handleSelectedQuiz} />
+    this.component = <QuizSelection quizIndex={quizIndex} handleQuizSelection={this.handleQuizSelection} />
 
     this.selectedQuiz = this.state.selectedQuiz
     if (this.selectedQuiz) {
