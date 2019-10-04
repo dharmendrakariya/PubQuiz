@@ -19,7 +19,7 @@ can play against each other.
 ## Epics:
 Sorted by priority.
 
-- [ ] Multiple Quizes
+- [x] Multiple Quizes
 - [ ] Multi-player, host a quiz, let others join (BIG!)
 - [ ] Quiz Categories
 - [ ] Whoever pushes a button first, may answer the question
