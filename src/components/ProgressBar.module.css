@@ -3,23 +3,22 @@
   height: 2em;
 }
 
-.progress-bar {
+.progressBar {
   height: 2em;
   width: 100%;
 
-  color: black;
   transition: width 1s, background-color 1s ease;
   transition-timing-function: linear;
 }
 
-.green {
-  background-color: green;
+.high {
+  background-color: #2B1A42;
 }
 
-.orange {
-  background-color: orange;
+.middle {
+  background-color: #8753D0;
 }
 
-.red {
-  background-color: red;
+.low {
+  background-color: #A789D0;
 }

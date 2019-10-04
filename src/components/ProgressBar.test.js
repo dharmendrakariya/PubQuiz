@@ -11,33 +11,33 @@ describe(ProgressBar, () => {
     expect(getByTestId('progress-bar')).toHaveStyle('width: 42%;')
   })
 
-  it("is green when it's 100%", () => {
+  it("is high when it's 100%", () => {
     const { getByTestId } = render(<ProgressBar percentage={100} />)
-    expect(getByTestId('progress-bar')).toHaveClass('green')
+    expect(getByTestId('progress-bar')).toHaveClass('high')
   })
 
-  it("is green when it's 50%", () => {
+  it("is high when it's 50%", () => {
     const { getByTestId } = render(<ProgressBar percentage={50} />)
-    expect(getByTestId('progress-bar')).toHaveClass('green')
+    expect(getByTestId('progress-bar')).toHaveClass('high')
   })
 
-  it("is orange when it's 49%", () => {
+  it("is middle when it's 49%", () => {
     const { getByTestId } = render(<ProgressBar percentage={49} />)
-    expect(getByTestId('progress-bar')).toHaveClass('orange')
+    expect(getByTestId('progress-bar')).toHaveClass('middle')
   })
 
-  it("is orange when it's 20%", () => {
+  it("is middle when it's 20%", () => {
     const { getByTestId } = render(<ProgressBar percentage={20} />)
-    expect(getByTestId('progress-bar')).toHaveClass('orange')
+    expect(getByTestId('progress-bar')).toHaveClass('middle')
   })
 
-  it("is red when it's 19%", () => {
+  it("is low when it's 19%", () => {
     const { getByTestId } = render(<ProgressBar percentage={19} />)
-    expect(getByTestId('progress-bar')).toHaveClass('red')
+    expect(getByTestId('progress-bar')).toHaveClass('low')
   })
 
-  it("is red when it's 10%", () => {
+  it("is low when it's 10%", () => {
     const { getByTestId } = render(<ProgressBar percentage={10} />)
-    expect(getByTestId('progress-bar')).toHaveClass('red')
+    expect(getByTestId('progress-bar')).toHaveClass('low')
   })
 })
