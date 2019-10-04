@@ -6,6 +6,7 @@
 
 .App-header {
   background-color: #170134;
+  background: linear-gradient(180deg, #170134, #2F0866);
   color: #A789D0;
 
   font-size: calc(2em + 2vmin);
