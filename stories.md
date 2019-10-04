@@ -13,7 +13,7 @@ can play against each other.
 - [ ] Better UI design
   * [x] selection of answer
   * [x] CSS per component
-  * [ ] Export color definition
+  * [x] Export color definition
   * [ ] redesign results screen
 
 ## Epics:
