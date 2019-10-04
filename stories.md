@@ -12,14 +12,15 @@ can play against each other.
 - [x] Load Questions from JSON file
 - [ ] Better UI design
   * [x] selection of answer
-  * [ ] redesign results screen
-  * [ ] CSS per component
+  * [x] CSS per component
   * [ ] Export color definition
+  * [ ] redesign results screen
 
 ## Epics:
+Sorted by priority.
 
-- [ ] Quiz Categories
 - [ ] Multiple Quizes
-- [ ] Multi-player, host a quiz, let others join
+- [ ] Multi-player, host a quiz, let others join (BIG!)
+- [ ] Quiz Categories
 - [ ] Whoever pushes a button first, may answer the question
 - [ ] Add advertisement on bottom to generate money

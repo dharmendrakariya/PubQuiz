@@ -1,0 +1,31 @@
+$app-background: lightgrey;
+$header-background: #170134;
+$header-color-top: #170134;
+$header-color-bottom: #2F0866;
+$header-text: #A789D0;
+
+.app {
+  background-color: lightgrey;
+  text-align: left;
+  height: 100vh;
+}
+
+.header {
+  background-color: $header-background;
+  background: linear-gradient(180deg, $header-color-top, $header-color-bottom);
+  color: $header-text;
+
+  font-size: calc(2em + 2vmin);
+  font-weight: bold;
+  text-align: center;
+
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  background-color: $background;
+}

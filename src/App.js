@@ -1,7 +1,7 @@
 import React from 'react';
 import questions from './questions.json';
 import Quiz from './components/Quiz';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 export default class App extends React.Component {
   constructor(props) {
