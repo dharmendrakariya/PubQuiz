@@ -9,8 +9,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
 
+    this.index = quizIndex
     this.state = {
-      quizzes: this.loadQuizzes(quizIndex),
+      quizzes: this.loadQuizzes(this.index),
       selectedQuiz: null
     }
 
@@ -28,7 +29,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    this.component = <QuizSelection quizIndex={quizIndex} handleQuizSelection={this.handleQuizSelection} />
+    this.component = <QuizSelection index={this.index} handleQuizSelection={this.handleQuizSelection} />
 
     this.selectedQuiz = this.state.selectedQuiz
     if (this.selectedQuiz) {

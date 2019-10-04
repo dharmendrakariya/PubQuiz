@@ -4,7 +4,7 @@ import QuizSelection from './QuizSelection'
 
 describe(QuizSelection, () => {
   const text = "What quiz would you like to play?"
-  const quizIndex = [
+  const index = [
     {
       "id": "1",
       "name": "Nerd Quiz",
@@ -18,22 +18,22 @@ describe(QuizSelection, () => {
   ]
 
   it('asks which quiz the player would like to select', () => {
-    const { queryByText } = render(<QuizSelection quizIndex={quizIndex} />)
+    const { queryByText } = render(<QuizSelection index={index} />)
     expect(queryByText(text)).not.toBeNull()
   })
 
   it('shows all the quizes', () => {
-    const { queryByText } = render(<QuizSelection quizIndex={quizIndex} />)
-    expect(queryByText(quizIndex[0].name)).not.toBeNull()
-    expect(queryByText(quizIndex[1].name)).not.toBeNull()
+    const { queryByText } = render(<QuizSelection index={index} />)
+    expect(queryByText(index[0].name)).not.toBeNull()
+    expect(queryByText(index[1].name)).not.toBeNull()
   })
 
   it('selects a quiz', () => {
     const callback = jest.fn()
-    const { getByText } = render(<QuizSelection quizIndex={quizIndex} handleQuizSelection={callback} />)
+    const { getByText } = render(<QuizSelection index={index} handleQuizSelection={callback} />)
 
-    fireEvent.click(getByText(quizIndex[1].name))
+    fireEvent.click(getByText(index[1].name))
 
-    expect(callback).toHaveBeenCalledWith(quizIndex[1].id)
+    expect(callback).toHaveBeenCalledWith(index[1].id)
   })
 })

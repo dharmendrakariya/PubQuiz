@@ -5,7 +5,7 @@ export default class QuizSelection extends React.Component {
   constructor(props) {
     super(props)
 
-    this.quizIndex = props.quizIndex
+    this.index = props.index
     this.handleQuizSelection = props.handleQuizSelection
 
     this.handleOnClick = this.handleOnClick.bind(this)
@@ -21,7 +21,7 @@ export default class QuizSelection extends React.Component {
       <div className={styles.quizzes}>
         <div className={styles.text} >What quiz would you like to play?</div>
         <div className={styles.selection}>
-          { this.quizIndex.map(this.renderButton) }
+          { this.index.map(this.renderButton) }
         </div>
       </div>
     )
