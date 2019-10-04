@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './QuizSelection.module.scss'
 
 export default class QuizSelection extends React.Component {
   constructor(props) {
@@ -17,16 +18,18 @@ export default class QuizSelection extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>What quiz would you like to play?</div>
-        { this.quizIndex.map(this.renderButton) }
+      <div className={styles.quizzes}>
+        <div className={styles.text} >What quiz would you like to play?</div>
+        <div className={styles.selection}>
+          { this.quizIndex.map(this.renderButton) }
+        </div>
       </div>
     )
   }
 
   renderButton(quiz) {
     return (
-      <button key={quiz.name} value={quiz.id} onClick={this.handleOnClick}>{quiz.name}</button>
+      <button className={styles.button} key={quiz.name} value={quiz.id} onClick={this.handleOnClick}>{quiz.name}</button>
     )
   }
 }
