@@ -1,10 +1,10 @@
-.App {
+.app {
   background-color: lightgrey;
   text-align: left;
   height: 100vh;
 }
 
-.App-header {
+.header {
   background-color: #170134;
   background: linear-gradient(180deg, #170134, #2F0866);
   color: #A789D0;
@@ -20,6 +20,6 @@
   justify-content: center;
 }
 
-.App-main {
+.main {
   background-color: lightgrey;
 }
