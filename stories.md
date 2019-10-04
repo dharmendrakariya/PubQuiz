@@ -11,9 +11,10 @@ can play against each other.
 - [x] Multiple questions
 - [x] Load Questions from JSON file
 - [ ] Better UI design
-  * [ ] selection of answer
+  * [x] selection of answer
   * [ ] redesign results screen
   * [ ] CSS per component
+  * [ ] Export color definition
 
 ## Epics:
 
