@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './ProgressBar.module.css'
+import styles from './ProgressBar.module.scss'
 
 export default class ProgressBar extends React.Component {
   color() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './Question.module.css'
+import styles from './Question.module.scss'
 
 export default class Question extends Component {
   constructor(props) {
