@@ -1,11 +1,12 @@
-$app-background: lightgrey;
-$header-background: #170134;
-$header-color-top: #170134;
-$header-color-bottom: #2F0866;
-$header-text: #A789D0;
+@import 'styles/colors';
+
+$header-background: $darker;
+$header-color-top: $darker;
+$header-color-bottom: $dark;
+$header-text: $lighter;
 
 .app {
-  background-color: lightgrey;
+  background-color: $background;
   text-align: left;
   height: 100vh;
 }
