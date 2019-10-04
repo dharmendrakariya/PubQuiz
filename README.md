@@ -2,6 +2,9 @@
 [![codecov](https://codecov.io/gh/Hacklor/PubQuiz/branch/master/graph/badge.svg)](https://codecov.io/gh/Hacklor/PubQuiz)
 
 # PubQuiz
+With this App you can play a PubQuiz game. Just select a Quiz and play!
+
+*Note: It is developed with Mobile Devices in mind.*
 
 ## Prerequisites
 - [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
