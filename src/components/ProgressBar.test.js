@@ -16,23 +16,23 @@ describe(ProgressBar, () => {
     expect(getByTestId('progress-bar')).toHaveClass('high')
   })
 
-  it("is high when it's 50%", () => {
-    const { getByTestId } = render(<ProgressBar percentage={50} />)
+  it("is high when it's 60%", () => {
+    const { getByTestId } = render(<ProgressBar percentage={60} />)
     expect(getByTestId('progress-bar')).toHaveClass('high')
   })
 
-  it("is middle when it's 49%", () => {
-    const { getByTestId } = render(<ProgressBar percentage={49} />)
+  it("is middle when it's 59%", () => {
+    const { getByTestId } = render(<ProgressBar percentage={59} />)
     expect(getByTestId('progress-bar')).toHaveClass('middle')
   })
 
-  it("is middle when it's 20%", () => {
-    const { getByTestId } = render(<ProgressBar percentage={20} />)
+  it("is middle when it's 30%", () => {
+    const { getByTestId } = render(<ProgressBar percentage={30} />)
     expect(getByTestId('progress-bar')).toHaveClass('middle')
   })
 
-  it("is low when it's 19%", () => {
-    const { getByTestId } = render(<ProgressBar percentage={19} />)
+  it("is low when it's 29%", () => {
+    const { getByTestId } = render(<ProgressBar percentage={29} />)
     expect(getByTestId('progress-bar')).toHaveClass('low')
   })
 

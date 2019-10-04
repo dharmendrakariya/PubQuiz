@@ -3,10 +3,10 @@ import styles from './ProgressBar.module.css'
 
 export default class ProgressBar extends React.Component {
   color() {
-    if (this.props.percentage < 20) {
+    if (this.props.percentage < 30) {
       return styles.low
     }
-    if (this.props.percentage < 50) {
+    if (this.props.percentage < 60) {
       return styles.middle
     }
 
