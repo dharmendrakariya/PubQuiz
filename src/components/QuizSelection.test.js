@@ -28,11 +28,11 @@ describe(QuizSelection, () => {
     expect(queryByText(quizIndex[1].name)).not.toBeNull()
   })
 
-  it('selects a quiz', async () => {
+  it('selects a quiz', () => {
     const callback = jest.fn()
     const { getByText } = render(<QuizSelection quizIndex={quizIndex} handleQuizSelection={callback} />)
 
-    await fireEvent.click(getByText(quizIndex[1].name))
+    fireEvent.click(getByText(quizIndex[1].name))
 
     expect(callback).toHaveBeenCalledWith(quizIndex[1].id)
   })
