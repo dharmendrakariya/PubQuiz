@@ -38,5 +38,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-## Learn More
-This project was bootstrapped with [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Heroku Deployment
+[Heroku URL of Pubquiz](https://starry-sky-pubquiz.herokuapp.com/)
+
+The `master` branch is automatically deployed on Heroku when all the checks (Travis CI) have passed.
+To manually deploy use the Heroku CLI tools and GIT.
+
+```bash
+git push heroku master
+```
